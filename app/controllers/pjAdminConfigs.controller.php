@@ -180,29 +180,37 @@ class pjAdminConfigs extends pjAdmin {
   function updateConfigFile() {
     $adminConfigList = pjConfigModel::factory()->findAll()->getData();
     $configFile = dirname(__FILE__).'/../config/userconfig.gen.php';
-    $file = fopen($configFile, "w");
-    $file = fwrite($file, "");
-    $file = fclose($file);
-    $file = fopen($configFile, "w");
+    
+    // First clear the file (don't reuse $file variable)
+    $handle = fopen($configFile, "w");
+    if ($handle === false) {
+        throw new Exception("Failed to open config file for writing");
+    }
+    fwrite($handle, "");
+    fclose($handle);
+    
+    // Now write the content
+    $handle = fopen($configFile, "w");
+    if ($handle === false) {
+        throw new Exception("Failed to open config file for writing");
+    }
+    
     $configContent = '<?php ';
     if ($adminConfigList) {
-      foreach($adminConfigList as $adminConfig) {
-        switch($adminConfig['type']) {
-          case "array":
-            $configContent .= 'define("'.$adminConfig['key'].'",'.$adminConfig['value'].');';
-          break;
-          // case "json":
-          //   $messages = json_encode($adminConfig['value']);
-          //   $configContent .= 'define("'.$adminConfig['key'].'",'.$messages.');';
-          // break;
-          default:
-          $configContent .= 'define("'.$adminConfig['key'].'","'.$adminConfig['value'].'");';
-        // $this->pr($adminConfig);
+        foreach($adminConfigList as $adminConfig) {
+            switch($adminConfig['type']) {
+                case "array":
+                    $configContent .= 'define("'.$adminConfig['key'].'",'.$adminConfig['value'].');';
+                    break;
+                default:
+                    $configContent .= 'define("'.$adminConfig['key'].'","'.addslashes($adminConfig['value']).'");';
+            }
         }
-      }
-      $configContent .= '?>';
+        $configContent .= '?>';
     }
-    fwrite($file, $configContent);
+    
+    fwrite($handle, $configContent);
+    fclose($handle);
   }
 }
 ?>
