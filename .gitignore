@@ -1,3 +1,8 @@
 app/web/uploads/**/*
 !app/web/uploads/**/.gitkeep
 app/config/*
+*.log
+config.inc.php
+config.gen.php
+userconfig.gen.php
+.DS_Store
