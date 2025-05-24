@@ -1,0 +1,791 @@
+/**--------------------------------------------------------------
+
+# Reviews
+
+--------------------------------------------------------------*/
+#pjWrapper .food-review-text,
+#pjWrapper .food-review-text:hover { 
+  /* color: #e54c2a !important; */
+  text-decoration: none;
+  margin-left: 0px !important;
+}
+#pjWrapper .food-review-rate a {
+  padding: 5px;
+  background-color: #dcdce6;
+  font-size: 20px;
+}
+#pjWrapper .food-review-rate a,
+#pjWrapper .food-review-rate a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+#pjWrapper #review-rate .food-review-rate {
+  margin-bottom: 10px;
+  float: none;
+}
+#pjWrapper #review-rate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background-color: #535353;
+  padding: 10px 0px;
+  color: #fff;
+}
+#pjWrapper .btn-review {
+  /* background: #e54c2a !important; */
+  color: #fff !important;
+  border:none !important;
+  padding: 10px 20px !important;
+  border-radius: 50px !important;
+}
+/************* FOR MOBILE MENU NAVBAR ************/
+#pjWrapper .nav-prev,
+#pjWrapper .nav-next {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background-color: #fff;
+  border: none;
+  z-index: 1;
+}
+#pjWrapper .nav-prev {
+  margin-top: -4.5px;
+  left: 7px;
+  margin-left: 1%;
+}
+/* #pjWrapper .nav-next {
+  margin-top: -50px;
+} */
+#pjWrapper .nav-prev i, 
+#pjWrapper .nav-next i {
+    vertical-align: top;
+}
+#pjWrapper .menu-list {
+  margin-left: 0px;
+  margin-top: -1.5%;
+  display: flex;
+}
+#pjWrapper .menu-list li {
+  display: inline-table;
+}
+#pjWrapper .menu-list li .list-item {
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: normal;
+  color: #9b9b9b;
+  font-weight: 700;
+  font-family: "Montserrat";
+  text-transform: uppercase;
+}
+#pjWrapper .menu-list li:hover .list-item,
+#pjWrapper .menu-list li.active .list-item {
+  color: #028F38;
+  text-decoration: none;
+}
+#pjWrapper .menu-list li.active .list-item {
+  border-bottom: 7px solid #028F38;
+  padding-bottom: 8px;
+} 
+@media only screen and (max-width: 768px) {
+  #pjWrapper .nav-next i, #pjWrapper .nav-prev i {
+    font-size: 28px;
+    /* color: #e54c2a; */
+  }
+  #pjWrapper .nav-next {
+    top: 50px;
+  }
+}
+#pjWrapper .foode-item-box::before,
+#pjWrapper .foode-item-box::after {
+  background: none;
+}
+#pjWrapper .foode-item-box ul li {
+  display: inline-block !important;
+}
+#pjWrapper .foode-item-box ul li a:hover {
+  background: inherit;
+}
+#pjWrapper .foode-item-box-mob ul li a {
+  text-decoration: none;
+}
+#pjWrapper .foode-item-box {
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  min-height: 140px;
+  position: relative;
+  text-align: center;
+  display: block;
+  background-color: #fff;
+  border-radius: 3px;
+}
+#pjWrapper .foode-item-box-mob {
+  display: none;
+}
+#pjWrapper .foode-item-box:before,#pjWrapper .foode-item-box:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  top: 0;
+  pointer-events: none;
+}
+#pjWrapper .foode-item-box ul li {
+  display: inline-block;
+}
+#pjWrapper .foode-item-box ul li a {
+  color: #000;
+  background-color: #fff;
+  display: block;
+  font-weight: 600;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  transition: .5s;
+  border-radius: 50px;
+}
+#pjWrapper .foode-item-box-mob ul li a{
+  color: #000;
+  display: block;
+  font-weight: 600;
+  padding: 10px 10px;
+  text-transform: uppercase;
+}
+#pjWrapper .foode-item-box ul li.active a {
+  background-color: #fff !important;
+  /* color: #e54c2a; */
+}
+
+/************ FOR FOOD ITEM MENU CONTAINER IN DESKTOP VIEW ***********/
+
+#pjWrapper .food-item-desc .row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+#pjWrapper .food-item-desc .row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+/************************ FOR OTP PAGE *******************************/
+#pjWrapper #otp-btns {
+  margin-top: 20px;
+}
+#pjWrapper #otp-btns button {
+  min-width: 20%;
+  width: auto;
+}
+#pjWrapper .digit-group {
+  width: auto;
+  margin: 10px auto;
+  text-align: center;
+  min-width: 50%;
+}
+#pjWrapper .digit-group  input {
+  width: 50px;
+  height: 50px;
+  padding: 0px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  /* color: #e54c2a; */
+  margin: 0 2px;
+  border-top: none;
+  border-left: none;
+  border-right:none;
+}
+
+@media (max-width: 767px) {
+  #pjWrapper .digit-group {
+    width: 85%;
+  }
+  #pjWrapper .digit-group input {
+    width: 34px;
+  }
+  #pjWrapper .book-a-table-btn {
+    display: none;
+  }
+  #pjWrapper #otp-btns button {
+    min-width: 40% !important;
+    width: auto !important;
+  }
+}
+
+/******* FOOD ITEMS ACCORDIAN ********/
+
+#pjWrapper .food-item-desc {
+  clear: both;
+  min-height: 700px;
+}
+#pjWrapper .clickCategory a:hover{
+  background-color: #fff !important; 
+  /* color: #e54c2a; */
+}
+#pjWrapper .clickCategory.active a {
+  outline: none;
+}
+
+/******* FOOD CREATE REVIEW PAGE TERMS ********/
+
+#review_terms input {
+  width: 20px;
+}
+#review_terms p {
+  display: inline;
+  vertical-align: top;
+}
+#review_terms a {
+  text-decoration: none;
+  vertical-align: top;
+}
+#pjWrapper .breadcrubs-title {
+  margin-top: 10px;
+}
+#pjWrapper .review_cnt {
+  cursor: pointer;
+}
+#pjWrapper .fa-search {
+  font-size: 20px;
+}
+#pjWrapper button[type="submit"] {
+  /* background: #e54c2a; */
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+#pjWrapper button[type="submit"]:hover {
+  /* background: #e54c2a; */
+  color: #fff;
+}
+#pjWrapper #btn-checkout,
+#pjWrapper .fdButtonLogin,
+#pjWrapper .fdButtonGetCategories,
+#pjWrapper .fdButtonPostPrice,
+#pjWrapper .fdButtonBackTypes,
+#pjWrapper .fdButtonPayment,
+#pjWrapper .fdButtonGetVouchers,
+#pjWrapper .fdButtonGetPreview,
+#pjWrapper .fdButtonGetCheckout,
+#pjWrapper .fdButtonConfirm,
+#pjWrapper .fdButtonProfile,
+#pjWrapper .fdButtonGetLogin,
+#pjWrapper .fdButtonSend,
+#pjWrapper .fdButtonOtp,
+#pjWrapper .fdStartOver,
+#pjWrapper .fdButtonOtpResend,
+#pjWrapper .fdContinue  {
+  /* background: #e54c2a !important; */
+  color: #fff !important;
+  border-radius: 50px !important;
+  padding: 10px 25px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px !important;
+  transition: 0.3s !important;
+  white-space: nowrap !important; 
+  border: none !important;
+}
+#pjWrapper .fdStartOver {
+  margin-left: 10px;
+}
+
+#pjWrapper .fdButtonCheckout:hover,
+#pjWrapper .fdButtonLogin:hover,
+#pjWrapper .fdButtonGetCategories:hover,
+#pjWrapper .fdButtonPostPrice:hover,
+#pjWrapper .fdButtonBackTypes:hover,
+#pjWrapper .fdButtonPayment:hover,
+#pjWrapper .fdButtonGetVouchers:hover,
+#pjWrapper .fdButtonGetPreview:hover,
+#pjWrapper .fdButtonGetCheckout:hover,
+#pjWrapper .fdButtonConfirm:hover,
+#pjWrapper .fdButtonProfile:hover,
+#pjWrapper .fdButtonGetLogin:hover,
+#pjWrapper .fdButtonSend:hover,
+#pjWrapper .fdButtonOtp:hover,
+#pjWrapper .fdButtonOtpResend:hover {
+  /* background: #e54c2a !important; */
+  color: #fff !important;
+  border:none !important;
+}
+
+#pjWrapper .fdBtnOrderTotal,
+#pjWrapper .fdProductOrder,
+#pjWrapper .btn-postcode, #pjWrapper .btn-postcode-edit {
+  /* background-color: #e54c2a !important; */
+  border: none !important;
+  
+}
+#pjWrapper .fdTypeTab {
+  background-color: #eee !important; 
+}
+#pjWrapper .fdTypeTab:hover {
+  background-color: #ccc !important;
+}
+#pjWrapper .pjFdProductName {
+  color: #000 !important;
+}
+#pjWrapper .fdTabOuter a,
+#pjWrapper .fdTabOuter a:hover,
+#pjWrapper .fdTabOuter.active a:hover {
+  color: #000;
+}
+#pjWrapper .fdTabOuter.active .fdTypeTab:hover{
+  /* background-color: #e54c2a !important; */
+  color: #fff !important;
+}
+#pjWrapper .cart-title {
+  color: #000 !important;
+}
+#pjWrapper .cart-product strong {
+  color: #000 !important;
+}
+a[data-toggle='tab']:hover {
+  text-decoration: none !important;
+}
+.fdForogtPassword {
+  color: #000 !important;
+}
+#pjWrapper .fdForogtPassword:hover {
+  text-decoration: none !important;
+  /* color: #e54c2a !important; */
+}
+#pjWrapper .fdContinueGuest {
+  /* color: #e54c2a !important; */
+  padding: 0px !important;
+}
+#pjWrapper .bottom-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#pjWrapper .bottom-links a {
+/*  font-size: 16px !important;*/
+}
+@keyframes reducetime {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+#pjWrapper .fdBtnLogout,
+#pjWrapper .fdBtnLogin {
+  color: #fff;
+}
+#pjWrapper .stars-group,
+#pjWrapper .stars-group-static {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 10px;
+}
+#pjWrapper .stars-group a {
+  padding: 5px;
+  background-color: #dcdce6;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 0px 3px;
+}
+#pjWrapper .stars-group a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+#pjWrapper #example2 {
+  background-position: -84px -8px;
+  border: 2px solid black;
+  background: url(https://m.media-amazon.com/images/S/sash/3-fm1Jbg4IHlyhq.png);
+  background-repeat: no-repeat;
+  background-size: 512px 256px;
+  height: 20px;
+  width: 80px;
+  position: relative;
+  vertical-align: text-top;
+  display: inline-block;
+}
+#pjWrapper .tot-rate {
+  background: url(../img/frontend/stars4.jpg) no-repeat scroll right center;
+  height: 20px;
+  width: 90px;
+  background-size: 130px 249px;
+}
+#pjWrapper .zeroStar {
+  background-position: right -15px bottom -20px;
+}
+#pjWrapper .pointFive { 
+  background-position: right -15px top -186px;;
+}
+#pjWrapper .oneStar {
+  background-position: right -15px top -166px;
+}
+#pjWrapper .oneFiveStar {
+  background-position: right -15px top -146px;
+}
+#pjWrapper .twoStar {
+  background-position: right -15px top -125px;
+}
+#pjWrapper .twoFiveStar {
+  background-position: right -15px top -106px;
+}
+#pjWrapper .threeStar {
+  background-position: right -15px bottom -144px;
+}
+#pjWrapper .threeFiveStar {
+  background-position: right -15px top -66px;
+}
+#pjWrapper .fourStar {
+  background-position: right -15px top -45px;
+}
+#pjWrapper .fourFiveStar {
+  background-position: right -15px top -23px;
+}
+#pjWrapper .fiveStar {
+  background-position: right -15px top -4px;
+}
+@media (max-width: 767px) {
+  #pjWrapper .stars-group_static {
+    align-items: center;
+  }
+  #pjWrapper .stars-group {
+    justify-content: center;
+  }
+}
+#pjWrapper .toggle.orderType .toggle-on,
+#pjWrapper .orderType.btn-danger,
+#pjWrapper .orderType.btn-danger:hover,
+#pjWrapper .toggle.imageToggle .toggle-on,
+#pjWrapper .imageToggle.btn-danger,
+#pjWrapper .imageToggle.btn-danger:hover {
+  background-color: #5f5950;
+  border-color: #5f5950;
+}
+#pjWrapper #personalDetails .card-body {
+  max-width: 100% !important;
+}
+#pjWrapper #personalDetails .card {
+  border: none;
+}
+#pjWrapper #collapsePersonal[aria-expanded="true"] .fa-angle-double-down { display: none; }
+#pjWrapper #collapsePersonal[aria-expanded="false"] .fa-angle-double-down { display: inline-block; }
+#pjWrapper #collapsePersonal[aria-expanded="true"] .fa-angle-double-up { display: inline-block; }
+#pjWrapper #collapsePersonal[aria-expanded="false"] .fa-angle-double-up { display: none; }
+#pjWrapper #collapsePersonal:hover {
+  text-decoration: none;
+}
+#pjWrapper #collapsePersonal {
+  text-decoration: none;
+}
+#pjWrapper .modal-backdrop.fade.in {
+  z-index: -1 !important;
+} 
+#pjWrapper .modal-backdrop {
+  z-index: 1049 !important;
+} 
+#pjWrapper .modal-dialog {
+  max-width: 700px;
+}
+#pjWrapper .form-group #post_code,
+#pjWrapper .form-group #addressList {
+  margin-bottom: 18px;
+}
+
+#pjWrapper .row:before, #pjWrapper .row:after {display: none !important;}
+#pjWrapper .food-review-text,
+#pjWrapper .tot-rate,
+#pjWrapper .food-review-rate,
+#pjWrapper #product_stars {
+  cursor: pointer;
+}
+#pjWrapper .imageToggle {
+  float: right;
+  margin-bottom: 15px !important;
+  margin-right: 15px;
+}
+#pjWrapper .pjFdBtnCart {
+  color: #fff !important;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  #pjWrapper .imageToggle {
+    margin-right: 0px;
+    margin-top: 0px;
+  }
+  #pjWrapper #review-rate {
+    flex-direction: column;
+  }
+  #pjWrapper .food-review-rate {
+    margin-right: 0px;
+  }
+}
+#pjWrapper .search-btn {
+    /* background-color: #e54c2a; */
+    color: #fff;
+}
+
+/********* Overriding form control styles for mobile view *********/
+
+@media only screen and ( max-width: 390px ) { 
+  [id^=pjWrapper] .form-group {
+    margin-bottom: 0px !important;
+  }
+  [id^=pjFdCartWrapper_] .alert {
+    margin-bottom: 5px !important;
+    border-top: 0px !important;
+    padding: 10px;
+  }
+  [id^=pjWrapper] .panel {
+    margin-bottom: 10px;
+  }
+  [id^=pjWrapper] .panel-body,
+  .p-a30  {
+    padding: 10px;
+  }
+  [id^=pjWrapper] h2 {
+    margin-top: 10px;
+    font-size: 25px;
+  }
+  [id^=fdCheckoutForm_] .card {
+    padding: 0px 5px;
+  }
+
+  #pjWrapper .label-space {
+    display: none !important;
+  }
+  #pjWrapper .my-30 {
+    margin-bottom: 10px;
+  }
+  #pjWrapper #searchInput-group .input-group {
+    margin-left: 0px;
+  }
+  #pjWrapper #search hr {
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+  }
+  #pjWrapper #btn-checkout {
+    margin-bottom: 0px !important;
+  }
+}
+
+@media only screen and ( min-width: 411px) { 
+  #pjWrapper .checkoutCheckbox .checkBox label {
+    right: 0px;
+  }
+  #pjWrapper .checkoutCheckbox #termsLabel {
+    margin-left: 32px;
+    font-size: 16px;
+  }
+}
+
+[id^=fdCheckoutForm_] .form-control {
+  margin-bottom: 0px;
+}
+#pjWrapper #personalDetails .card {
+  padding: 0px 5px;
+}
+
+#pjWrapper .row {
+  clear: both !important;
+}
+/* ==========================================================================
+		#menulist-mob
+	========================================================================== */
+  #pjWrapper #menulist-mob .foode-item-box-mob {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+@media only screen and (max-width: 480px) {
+  #pjWrapper #menulist-mob {
+    top: 120px;
+  }
+  #pjWrapper #menulist-mob .foode-item-box-mob {
+    padding-top: 14px;
+  }
+  #pjWrapper #fdImgCheck {
+    display: flex;
+  }
+  #pjWrapper .mt-5 {
+    margin-top: 160px !important;
+  }
+  #review_terms #checkoutCheck::before {
+    top: 5px;
+  }
+  #pjWrapper .nav-next {
+    top: 10px;
+  }
+  #pjWrapper #review_container {
+    margin-top: 65px;
+  }
+  /* #pjWrapper .pjFdPanelLeft .panel-default {
+    margin-top: 115px;
+  } */
+}
+
+#pjWrapper #no-access {
+  text-align: center;
+  margin-top: 125px;
+  background-color: #fffaf3;
+  color: #ffb03b;
+  border-radius: 10px;
+  border: 1px solid #ffb03b;
+}
+
+/* ==========================================================================
+	OVERRIDING THEME COLOR AND FONT STYLE
+========================================================================== */
+body #pjWrapper {
+  font-family: "Poppins", sans-serif;
+}
+@media only screen and (max-width: 768px) {
+  #pjWrapper .nav-next i, #pjWrapper .nav-prev i {
+    color: #ffb03b;
+ }
+}
+#pjWrapper .site-button {
+  background-color: #ffb03b;
+}
+#pjWrapper .site-button:active, #pjWrapper .site-button:hover, #pjWrapper .site-button:focus, #pjWrapper .active > .site-button {
+  background-color: #ffb03b;
+}
+#pjWrapper #voucher-btn {
+  background-color: #ffb03b !important;
+}
+#pjWrapper #search-addon {
+  border: 1px solid #ffb03b !important;
+}
+#pjWrapper #topBtn {
+  background-color: #ffb03b;
+}
+#pjWrapper #radiodelivery:checked {
+  background-color: #ffb03b;
+}
+#pjWrapper .checkBox input:checked ~ label::before {
+  border: 2px solid #ffb03b;
+  background-color: #ffb03b;
+}
+#pjWrapper .btn-show.active, #pjWrapper .btn-hide.active {
+  background-color: #ffb03b !important;
+  color: #fff;
+}
+#pjWrapper .btn-terms {
+  background: #ffb03b !important;
+}
+.btn-terms:hover {
+  background: #ffb03b;
+}
+#pjWrapper #pjFdTermsAndConditions a {
+  color: #ffb03b !important;
+}
+#pjWrapper .food-review-text, #pjWrapper .food-review-text:hover {
+  color: #ffb03b !important;
+}
+#pjWrapper .btn-review {
+  background: #ffb03b !important;
+}
+#pjWrapper .menu-list li.active {
+  border-bottom: 3px solid #ffb03b;
+}
+#pjWrapper .foode-item-box ul li.active a {
+  color: #ffb03b !important;
+}
+#pjWrapper .foode-item-box-mob ul li.active a {
+  color: #ffb03b !important;
+}
+#pjWrapper .digit-group input {
+  color: #ffb03b;
+}
+#pjWrapper .digit-group input:focus {
+  border-bottom: 1px solid #ffb03b;
+}
+#pjWrapper .clickCategory a:hover {
+  color: #ffb03b;
+}
+#pjWrapper button[type="submit"] {
+  background: #ffb03b;
+}
+#pjWrapper button[type="submit"]:hover {
+  background: #ffb03b;
+}
+#pjWrapper #btn-checkout, #pjWrapper .fdButtonLogin, #pjWrapper .fdButtonGetCategories, #pjWrapper .fdButtonPostPrice, #pjWrapper .fdButtonBackTypes, #pjWrapper .fdButtonPayment, #pjWrapper .fdButtonGetVouchers, #pjWrapper .fdButtonGetPreview, #pjWrapper .fdButtonGetCheckout, #pjWrapper .fdButtonConfirm, #pjWrapper .fdButtonProfile, #pjWrapper .fdButtonGetLogin, #pjWrapper .fdButtonSend, #pjWrapper .fdButtonOtp, #pjWrapper .fdButtonOtpResend, #pjWrapper .fdStartOver {
+  background: #ffb03b !important;
+}
+#pjWrapper .fdButtonCheckout:hover, #pjWrapper .fdButtonLogin:hover, #pjWrapper .fdButtonGetCategories:hover, #pjWrapper .fdButtonPostPrice:hover, #pjWrapper .fdButtonBackTypes:hover, #pjWrapper .fdButtonPayment:hover, #pjWrapper .fdButtonGetVouchers:hover, #pjWrapper .fdButtonGetPreview:hover, #pjWrapper .fdButtonGetCheckout:hover, #pjWrapper .fdButtonConfirm:hover, #pjWrapper .fdButtonProfile:hover, #pjWrapper .fdButtonGetLogin:hover, #pjWrapper .fdButtonSend:hover, #pjWrapper .fdButtonOtp:hover, #pjWrapper .fdButtonOtpResend:hover {
+  background: #ffb03b !important;
+}
+#pjWrapper .fdBtnOrderTotal, #pjWrapper .fdProductOrder, #pjWrapper .btn-postcode, #pjWrapper .btn-postcode-edit {
+  background-color: #ffb03b !important;
+}
+#pjWrapper .fdTabOuter.active .fdTypeTab {
+  background-color: #ffb03b !important;
+}
+#pjWrapper .fdTabOuter.active .fdTypeTab:hover {
+  background-color: #ffb03b !important;
+}
+#pjWrapper .fdForogtPassword:hover {
+  text-decoration: none !important;
+  color: #ffb03b !important;
+}
+#pjWrapper .fdContinueGuest {
+  color: #ffb03b !important;
+}
+#pjWrapper .fdContinue {
+  background-color: #ffb03b;
+}
+#terms {
+  color: #ffb03b;
+}
+#pjWrapper .toggle.orderType .toggle-off, #pjWrapper .orderType.btn-success, #pjWrapper .orderType.btn-success:hover, #pjWrapper .toggle.imageToggle .toggle-off, #pjWrapper .imageToggle.btn-success, #pjWrapper .imageToggle.btn-success:hover {
+  background-color: #ffb03b;
+  border-color: #ffb03b;
+}
+#pjWrapper #btn-cart {
+  background-color: #ffb03b;
+}
+#pjWrapper .search-btn {
+  background-color: #ffb03b;
+}
+#pjWrapper .pjFdProductPrice {
+  color: #ffb03b !important;
+}
+#pjWrapper .rdx-separator.style-liner {
+  background-color: #ffb03b;
+}
+#pjWrapper .review_cnt {
+  color: #ffb03b;
+}
+#topbar .nav-profile {
+  color: #ffb03b !important;
+}
+
+/**********************  AHAADOSA OVERRIDING STYLES *************************/
+#pjWrapper .btn {
+  height: 100%;
+}
+  
+.sticky-header.fixed {
+  z-index: 1000 !important;
+}
+
+#header a {
+  text-decoration: none !important;
+}
+#topbar .dropdown-menu.show {
+  z-index: 1031;
+}
+
+#topbar {
+  z-index: 1031 !important;
+}

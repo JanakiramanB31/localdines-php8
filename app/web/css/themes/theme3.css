@@ -1,0 +1,153 @@
+/* ==========================================================================
+	#Buttons
+========================================================================== */
+#pjWrapper .pjFdBtnLink { color: #1ca76c; }
+#pjWrapper .pjFdBtnLink:hover { color: #12965c; }
+
+#pjWrapper .btn-default { border-color: #12965c; color: #fff; background: #1ca76c; font-weight: bold; }
+#pjWrapper .btn-default:hover { border-color: #12965c; color: #fff; background: #12965c; }
+
+#pjWrapper .pjFdBtnHome,
+#pjWrapper .pjFdBtnAcc,
+#pjWrapper .pjFdBtnTotal,
+#pjWrapper .pjFdBtnNav,
+#pjWrapper .pjFdCounter .btn { border: 0; background: #fff; }
+#pjWrapper .pjFdBtnHome:hover,
+#pjWrapper .pjFdBtnAcc:hover,
+#pjWrapper .pjFdBtnTotal:hover,
+#pjWrapper .pjFdBtnNav:hover,
+#pjWrapper .pjFdCounter .btn { border: 0; background: #fff; }
+
+#pjWrapper .pjFdBtnHome,
+#pjWrapper .pjFdBtnTotal,
+#pjWrapper .pjFdBtnNav,
+#pjWrapper .pjFdBtnAcc { color: #1ca76c; }
+#pjWrapper .pjFdCounter .btn { color: #5a5957; }
+#pjWrapper .pjFdBtnHome:hover,
+#pjWrapper .pjFdBtnAcc:hover,
+#pjWrapper .pjFdBtnTotal:hover,
+#pjWrapper .pjFdBtnNav:hover { color: #12965c; }
+#pjWrapper .pjFdCounter .btn:hover { color: #5a5957; }
+
+#pjWrapper .nav-pills > li > a,
+#pjWrapper .nav-pills > li > a:hover,
+#pjWrapper .nav-pills > li > a:focus { color: #5a5957; }
+#pjWrapper .nav-pills > li.active > a,
+#pjWrapper .nav-pills > li.active > a:hover,
+#pjWrapper .nav-pills > li.active > a:focus { background: #1ca76c; }
+
+#pjWrapper .btn-default.disabled,
+#pjWrapper .btn-default[disabled],
+#pjWrapper fieldset[disabled] .btn-default,
+#pjWrapper .btn-default.disabled:hover,
+#pjWrapper .btn-default[disabled]:hover,
+#pjWrapper fieldset[disabled] .btn-default:hover,
+#pjWrapper .btn-default.disabled:focus,
+#pjWrapper .btn-default[disabled]:focus,
+#pjWrapper fieldset[disabled] .btn-default:focus,
+#pjWrapper .btn-default.disabled.focus,
+#pjWrapper .btn-default.focus[disabled],
+#pjWrapper fieldset[disabled] .btn-default.focus,
+#pjWrapper .btn-default.disabled:active,
+#pjWrapper .btn-default[disabled]:active,
+#pjWrapper fieldset[disabled] .btn-default:active,
+#pjWrapper .btn-default.disabled.active,
+#pjWrapper .btn-default.active[disabled],
+#pjWrapper fieldset[disabled] .btn-default.active { background: #1ca76c; }
+
+#pjWrapper .pjFdNav .pjFdBtnPassed { color: #12965c; }
+#pjWrapper .pjFdBtnActive,
+#pjWrapper .pjFdNav .pjFdBtnActive,
+#pjWrapper .pjFdLanguage .pjFdBtnActive { background: #1ca76c; color: #fff; }
+
+/* ==========================================================================
+	#pjFdCounter
+========================================================================== */
+#pjWrapper .pjFdCounter { -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, .1); box-shadow: 0 3px 3px rgba(0, 0, 0, .1); }
+#pjWrapper .pjFdCounter .form-control { border: 0; }
+#pjWrapper .pjFdCounter .btn,
+#pjWrapper .pjFdCounter .btn:hover { background: #a4a2a3; color: #fff; }
+#pjWrapper .pjFdCounter .input-group-btn:last-child>.btn,
+#pjWrapper .pjFdCounter .input-group-btn:last-child>.btn-group { margin-left: 0; }
+
+/* ==========================================================================
+	#Pannels
+========================================================================== */
+#pjWrapper .panel-default > .panel-heading { background: #fff; }
+#pjWrapper .pjFdPanelLeft > .panel { border: 0; }
+#pjWrapper .pjFdPanelLeft .pjFdPanelHead,
+#pjWrapper .pjFdPanelRight .pjFdPanelHead,
+#pjWrapper .pjFdPanelLeft .pjFdPanelBody,
+#pjWrapper .pjFdPanelRight .pjFdPanelBody { border: 0; background: #eef0ef; }
+
+#pjWrapper .pjFdPanelLeft > .panel > .panel-body > .panel-group > .panel,
+#pjWrapper .pjFdPanelRight > .panel > .panel-body > .panel-group > .panel { margin-bottom: 10px; background: #fff; }
+#pjWrapper .pjFdPanelRight .panel,
+#pjWrapper .pjFdPanelLeft .panel { border: 0; }
+
+#pjWrapper .pjFdPanelLeft .panel-group .panel-heading a[aria-expanded="false"] { background: #eef0ef; }
+#pjWrapper .pjFdPanelLeft .panel-group .panel-heading .pjFdProductsType[aria-expanded="false"] { background: #fff; }
+#pjWrapper .pjFdPanelLeft .panel-group .panel-heading a[aria-expanded="true"] { background: #fff; }
+
+/* ==========================================================================
+	#pjFdPanelRight
+========================================================================== */
+#pjWrapper .pjFdPanelRight > .panel-default > .panel-heading > .panel-title { color: #1ca76c; }
+#pjWrapper .pjFdPanelRight .alert { border-top: 0; }
+#pjWrapper .pjFdPriceTotal { font-weight: bold; }
+
+/* ==========================================================================
+	#pjFdAccourdion
+========================================================================== */
+#pjWrapper .pjFdAccourdionOuterHead h1 { font-weight: bold; }
+
+/* ==========================================================================
+	#pjFdProducts
+========================================================================== */
+#pjWrapper .pjFdProductName { color: #2f87d1; }
+#pjWrapper .pjFdProductPrice { color: #3d393a; font-weight: bold; }
+#pjWrapper .pjFdPanelLeft .panel-group .panel-heading a[aria-expanded="false"],
+#pjWrapper .pjFdPanelLeft .panel-group .panel-heading a[aria-expanded="false"] .pjFdProductName { color: #1ca66a; }
+#pjWrapper .pjFdPanelLeft .panel-group .panel-heading a[aria-expanded="true"],
+#pjWrapper .pjFdPanelLeft .panel-group .panel-heading a[aria-expanded="true"] .pjFdProductName { color: #181818; }
+
+/* ==========================================================================
+	#pjFdAlert
+========================================================================== */
+#pjWrapper .pjFdAlert { border-color: #d0391c; background: #f34a29; color: #fff; }
+
+nav,
+footer{
+	background-color: #eef0ef !important;
+}
+
+.text-nav a{
+	color: #3ca76cd6 !important;
+}
+li.active a:hover {
+	color: #3ca76cd6 !important;
+}
+.pjFdContainer {
+	background-color: #3ca76cd6;
+}
+.left-box {
+	background-color: #eef0ef;
+}
+
+.text-list {
+	color: #3ca76cd6 !important;
+}
+li .text-list:hover {
+	color: #e85d4b !important;
+} 
+li.active a {
+	color: #000 !important;
+	background-color: #f8f8f8 !important;
+}
+hr {
+	border-top: 1px solid #b5b8b6 !important;
+}
+.text-list.pjFdBtnHome,
+.text-list.pjFdBtnLink {
+	color: #3ca76cd6 !important;
+}

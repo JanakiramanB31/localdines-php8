@@ -1,0 +1,1 @@
+<?php include PJ_VIEWS_PATH . 'pjAdminReports/elements/report_template.php';  ?>

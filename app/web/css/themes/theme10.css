@@ -1,0 +1,150 @@
+/* ==========================================================================
+	#Buttons
+========================================================================== */
+#pjWrapper .pjFdBtnLink { color: #d11f1f; }
+#pjWrapper .pjFdBtnLink:hover { color: #083063; }
+
+#pjWrapper .btn-default { border-color: #083063; color: #fff; 
+	background: rgb(25,70,127);
+	background: -moz-linear-gradient(top,  rgba(25,70,127,1) 0%, rgba(25,71,123,1) 3%, rgba(24,69,126,1) 5%, rgba(23,68,125,1) 13%, rgba(20,66,118,1) 37%, rgba(17,58,110,1) 66%, rgba(13,55,105,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(25,70,127,1)), color-stop(3%,rgba(25,71,123,1)), color-stop(5%,rgba(24,69,126,1)), color-stop(13%,rgba(23,68,125,1)), color-stop(37%,rgba(20,66,118,1)), color-stop(66%,rgba(17,58,110,1)), color-stop(100%,rgba(13,55,105,1)));
+	background: -webkit-linear-gradient(top,  rgba(25,70,127,1) 0%,rgba(25,71,123,1) 3%,rgba(24,69,126,1) 5%,rgba(23,68,125,1) 13%,rgba(20,66,118,1) 37%,rgba(17,58,110,1) 66%,rgba(13,55,105,1) 100%);
+	background: -o-linear-gradient(top,  rgba(25,70,127,1) 0%,rgba(25,71,123,1) 3%,rgba(24,69,126,1) 5%,rgba(23,68,125,1) 13%,rgba(20,66,118,1) 37%,rgba(17,58,110,1) 66%,rgba(13,55,105,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(25,70,127,1) 0%,rgba(25,71,123,1) 3%,rgba(24,69,126,1) 5%,rgba(23,68,125,1) 13%,rgba(20,66,118,1) 37%,rgba(17,58,110,1) 66%,rgba(13,55,105,1) 100%);
+	background: linear-gradient(to bottom,  rgba(25,70,127,1) 0%,rgba(25,71,123,1) 3%,rgba(24,69,126,1) 5%,rgba(23,68,125,1) 13%,rgba(20,66,118,1) 37%,rgba(17,58,110,1) 66%,rgba(13,55,105,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#19467f', endColorstr='#0d3769',GradientType=0 );
+}
+#pjWrapper .btn-default:hover { border-color: #083063; color: #fff;
+	background: rgb(13,55,105);
+	background: -moz-linear-gradient(top,  rgba(13,55,105,1) 0%, rgba(17,58,110,1) 34%, rgba(20,66,118,1) 63%, rgba(23,68,125,1) 87%, rgba(24,69,126,1) 95%, rgba(25,71,123,1) 97%, rgba(25,70,127,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(13,55,105,1)), color-stop(34%,rgba(17,58,110,1)), color-stop(63%,rgba(20,66,118,1)), color-stop(87%,rgba(23,68,125,1)), color-stop(95%,rgba(24,69,126,1)), color-stop(97%,rgba(25,71,123,1)), color-stop(100%,rgba(25,70,127,1)));
+	background: -webkit-linear-gradient(top,  rgba(13,55,105,1) 0%,rgba(17,58,110,1) 34%,rgba(20,66,118,1) 63%,rgba(23,68,125,1) 87%,rgba(24,69,126,1) 95%,rgba(25,71,123,1) 97%,rgba(25,70,127,1) 100%);
+	background: -o-linear-gradient(top,  rgba(13,55,105,1) 0%,rgba(17,58,110,1) 34%,rgba(20,66,118,1) 63%,rgba(23,68,125,1) 87%,rgba(24,69,126,1) 95%,rgba(25,71,123,1) 97%,rgba(25,70,127,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(13,55,105,1) 0%,rgba(17,58,110,1) 34%,rgba(20,66,118,1) 63%,rgba(23,68,125,1) 87%,rgba(24,69,126,1) 95%,rgba(25,71,123,1) 97%,rgba(25,70,127,1) 100%);
+	background: linear-gradient(to bottom,  rgba(13,55,105,1) 0%,rgba(17,58,110,1) 34%,rgba(20,66,118,1) 63%,rgba(23,68,125,1) 87%,rgba(24,69,126,1) 95%,rgba(25,71,123,1) 97%,rgba(25,70,127,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d3769', endColorstr='#19467f',GradientType=0 );
+}
+
+#pjWrapper .pjFdBtnHome,
+#pjWrapper .pjFdBtnAcc,
+#pjWrapper .pjFdBtnNav,
+#pjWrapper .pjFdCounter .btn { border-color: #bdb9ba; 
+	background: rgb(255,255,255);
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(249,247,248,1) 60%, rgba(246,245,243,1) 70%, rgba(248,244,243,1) 80%, rgba(245,241,240,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(60%,rgba(249,247,248,1)), color-stop(70%,rgba(246,245,243,1)), color-stop(80%,rgba(248,244,243,1)), color-stop(100%,rgba(245,241,240,1)));
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(249,247,248,1) 60%,rgba(246,245,243,1) 70%,rgba(248,244,243,1) 80%,rgba(245,241,240,1) 100%);
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(249,247,248,1) 60%,rgba(246,245,243,1) 70%,rgba(248,244,243,1) 80%,rgba(245,241,240,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(249,247,248,1) 60%,rgba(246,245,243,1) 70%,rgba(248,244,243,1) 80%,rgba(245,241,240,1) 100%);
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(249,247,248,1) 60%,rgba(246,245,243,1) 70%,rgba(248,244,243,1) 80%,rgba(245,241,240,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f1f0',GradientType=0 );
+}
+#pjWrapper .pjFdBtnTotal,
+#pjWrapper .panel-title > .pjFdBtnTotal { background: #373c42; color: #fff; font-weight: bold; }
+
+#pjWrapper .pjFdBtnHome:hover,
+#pjWrapper .pjFdBtnAcc:hover,
+#pjWrapper .pjFdBtnNav:hover,
+#pjWrapper .pjFdCounter .btn { border-color: #bdb9ba;
+	background: rgb(245,241,240);
+	background: -moz-linear-gradient(top,  rgba(245,241,240,1) 0%, rgba(248,244,243,1) 20%, rgba(246,245,243,1) 30%, rgba(249,247,248,1) 40%, rgba(255,255,255,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(245,241,240,1)), color-stop(20%,rgba(248,244,243,1)), color-stop(30%,rgba(246,245,243,1)), color-stop(40%,rgba(249,247,248,1)), color-stop(100%,rgba(255,255,255,1)));
+	background: -webkit-linear-gradient(top,  rgba(245,241,240,1) 0%,rgba(248,244,243,1) 20%,rgba(246,245,243,1) 30%,rgba(249,247,248,1) 40%,rgba(255,255,255,1) 100%);
+	background: -o-linear-gradient(top,  rgba(245,241,240,1) 0%,rgba(248,244,243,1) 20%,rgba(246,245,243,1) 30%,rgba(249,247,248,1) 40%,rgba(255,255,255,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(245,241,240,1) 0%,rgba(248,244,243,1) 20%,rgba(246,245,243,1) 30%,rgba(249,247,248,1) 40%,rgba(255,255,255,1) 100%);
+	background: linear-gradient(to bottom,  rgba(245,241,240,1) 0%,rgba(248,244,243,1) 20%,rgba(246,245,243,1) 30%,rgba(249,247,248,1) 40%,rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f1f0', endColorstr='#ffffff',GradientType=0 );
+}
+#pjWrapper .pjFdBtnTotal:hover { background: #4d535b; }
+#pjWrapper .pjFdCounter .btn { color: #2c2e2d; }
+
+#pjWrapper .pjFdBtnHome,
+#pjWrapper .pjFdBtnAcc,
+#pjWrapper .pjFdBtnNav { color: #6989b0; }
+#pjWrapper .pjFdBtnHome:hover,
+#pjWrapper .pjFdBtnAcc:hover,
+#pjWrapper .pjFdBtnNav:hover { color: #6989b0; }
+
+#pjWrapper .pjFdNav .pjFdBtnPassed { color: #d11f1f; }
+#pjWrapper .pjFdBtnActive,
+#pjWrapper .pjFdNav .pjFdBtnActive,
+#pjWrapper .pjFdLanguage .pjFdBtnActive { color: #083063; }
+
+/* ==========================================================================
+	#Pannels
+========================================================================== */
+#pjWrapper .panel-default > .panel-heading { background: #fff; }
+#pjWrapper .pjFdPanelLeft .pjFdPanelHead,
+#pjWrapper .pjFdPanelRight .pjFdPanelHead { background: #f7f7f7; color: #6988b4; }
+#pjWrapper .pjFdPanelRight .alert strong { color: #6988b4; }
+#pjWrapper .pjFdPanelRight .alert small { color: #535d5f; }
+#pjWrapper .pjFdPriceTotal { font-weight: bold; }
+#pjWrapper .pjFdPanelLeft .pjFdPanelBody > .panel-group > .panel { border-color: #bfcfdf; background: #f9f9f9; }
+#pjWrapper .pjFdPanelLeft .pjFdPanelBody > .panel-group > .panel > .panel-collapse > .panel-body { border-top: 0; }
+
+#pjWrapper .pjFdPanelLeft .panel-group .panel-heading a[aria-expanded="false"] { background: #edf0f5; }
+#pjWrapper .pjFdPanelLeft .panel-group .panel-heading a[aria-expanded="true"] { background: #f9f9f9; }
+
+/* ==========================================================================
+	#pjFdAccourdion
+========================================================================== */
+#pjWrapper .pjFdAccourdionOuterHead h1 { font-weight: bold; }
+
+/* ==========================================================================
+	#pjFdProducts
+========================================================================== */
+#pjWrapper .pjFdProductName { color: #6788b1; }
+#pjWrapper .pjFdProductHead [aria-expanded="true"] { background: #fff !important; }
+#pjWrapper .pjFdProductHead [aria-expanded="true"] .pjFdProductName { color: #312f30; }
+#pjWrapper .pjFdProductPrice { color: #d11f1f; }
+#pjWrapper .pjFdAccourdionOuterHead > .panel-title > [aria-expanded="true"] { color: #35393a; font-weight: bold; }
+#pjWrapper .pjFdAccourdionOuterHead > .panel-title > [aria-expanded="false"] { color: #6a7579; font-weight: bold; }
+#pjWrapper .pjFdProductsType { font-weight: normal; text-transform: capitalize; }
+#pjWrapper .pjFdProductMeta td,
+#pjWrapper .pjFdProductContent p { color: #535d5f; }
+
+/* ==========================================================================
+	#pjFdAlert
+========================================================================== */
+#pjWrapper .pjFdAlert { border-color: #d2201e; background: #ea3634; color: #fff; }
+#pjWrapper .pjFdAlert .close { text-shadow: none; }
+
+
+footer,
+.left-box {
+	background-color: #f8f8f8;
+}
+/* .pjFdContainer {
+} */
+
+.text-nav a{
+	color: #083063 !important;
+}
+/* li.active a:hover {
+	color: #083063;
+} */
+.text-list {
+	color: #083063 !important;
+}
+li .text-list:hover {
+	color: #083063 !important;
+} 
+/* li.active a {
+	color: #000 !important;
+	
+} */
+.footer-title {
+	color: #000 !important;
+}
+.pjFdBtnOrder {
+    background-color: rgb(25,70,127);
+    color: #fff !important;
+}
+@media only screen and (max-width: 768px) {
+    .pjFdBtnOrder {
+		padding: 4px 2px !important;
+	}
+}
+.text-list.pjFdBtnHome,
+.text-list.pjFdBtnLink {
+	color: #083063 !important;
+}

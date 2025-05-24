@@ -1,0 +1,127 @@
+/* ==========================================================================
+	#Buttons
+========================================================================== */
+#pjWrapper .pjFdBtnLink { color: #1eb185; }
+#pjWrapper .pjFdBtnLink:hover { color: #1ec290; }
+
+#pjWrapper .btn-default { border-color: #1eb185; border-width: 2px; background: #1ec290; color: #fff; }
+#pjWrapper .btn-default:hover { border-color: #1eb185; background: #1eb185; color: #fff; }
+
+#pjWrapper .pjFdBtnHome,
+#pjWrapper .pjFdBtnAcc,
+#pjWrapper .pjFdBtnNav { border-color: transparent; background-color: transparent; }
+#pjWrapper .pjFdBtnTotal,
+#pjWrapper .panel-title > .pjFdBtnTotal { border-color: #1cc491; background: #1cc491; color: #fff; }
+#pjWrapper .pjFdBtnTotal:hover,
+#pjWrapper .panel-title > .pjFdBtnTotal:hover { border-color: #eaeaea; background: #eaeaea; color: #1cc290; }
+#pjWrapper .pjFdBtnHome:hover,
+#pjWrapper .pjFdBtnAcc:hover,
+#pjWrapper .pjFdBtnNav:hover { border-color: #eaeaea; background: #eaeaea; }
+#pjWrapper .pjFdCounter .btn { background: #eaeaea; border-color: #ccc; }
+
+#pjWrapper .pjFdBtnHome,
+#pjWrapper .pjFdBtnAcc,
+#pjWrapper .pjFdBtnNav,
+#pjWrapper .pjFdBtnTotal { color: #1eb185; }
+#pjWrapper .pjFdBtnHome:hover,
+#pjWrapper .pjFdBtnNav:hover,
+#pjWrapper .pjFdBtnAcc:hover { color: #1cc290; }
+#pjWrapper .pjFdCounter .btn,
+#pjWrapper .pjFdCounter .btn:hover { color: #000; }
+#pjWrapper .pjFdCounter .btn { border-width: 1px; }
+
+#pjWrapper .nav-pills > li > a,
+#pjWrapper .nav-pills > li > a:hover,
+#pjWrapper .nav-pills > li > a:focus { color: #5a5957; }
+#pjWrapper .nav-pills > li.active > a,
+#pjWrapper .nav-pills > li.active > a:hover,
+#pjWrapper .nav-pills > li.active > a:focus { background: #1eb185; }
+
+#pjWrapper .btn-default.disabled,
+#pjWrapper .btn-default[disabled],
+#pjWrapper fieldset[disabled] .btn-default,
+#pjWrapper .btn-default.disabled:hover,
+#pjWrapper .btn-default[disabled]:hover,
+#pjWrapper fieldset[disabled] .btn-default:hover,
+#pjWrapper .btn-default.disabled:focus,
+#pjWrapper .btn-default[disabled]:focus,
+#pjWrapper fieldset[disabled] .btn-default:focus,
+#pjWrapper .btn-default.disabled.focus,
+#pjWrapper .btn-default.focus[disabled],
+#pjWrapper fieldset[disabled] .btn-default.focus,
+#pjWrapper .btn-default.disabled:active,
+#pjWrapper .btn-default[disabled]:active,
+#pjWrapper fieldset[disabled] .btn-default:active,
+#pjWrapper .btn-default.disabled.active,
+#pjWrapper .btn-default.active[disabled],
+#pjWrapper fieldset[disabled] .btn-default.active { border-color: #1eb185; background: #1ec290; }
+
+#pjWrapper .pjFdNav .pjFdBtnPassed { color: #1eb185; }
+#pjWrapper .pjFdBtnActive,
+#pjWrapper .pjFdNav .pjFdBtnActive,
+#pjWrapper .pjFdLanguage .pjFdBtnActive { background: #1ec290; color: #fff; }
+
+/* ==========================================================================
+	#Pannels
+========================================================================== */
+#pjWrapper .panel-default > .panel-heading { background: #fff; }
+#pjWrapper .pjFdPanelLeft .pjFdPanelHead,
+#pjWrapper .pjFdPanelRight .pjFdPanelHead { background: #fff; }
+#pjWrapper .pjFdPanelRight .pjFdPanelHead { color: #1eb185; }
+
+#pjWrapper .pjFdProductHead a[aria-expanded="false"] { background: #f3f5f4; }
+#pjWrapper .pjFdPanelLeft .panel-group .panel-heading a[aria-expanded="true"] { background: #fff; }
+
+/* ==========================================================================
+	#pjFdAccourdion
+========================================================================== */
+#pjWrapper .pjFdAccourdionOuterHead h1 { font-weight: bold; }
+
+/* ==========================================================================
+	#pjFdProducts
+========================================================================== */
+#pjWrapper .pjFdProductName { color: #549f88; }
+#pjWrapper .pjFdProductHead [aria-expanded="true"] .pjFdProductName { color: #55595a; }
+#pjWrapper .pjFdProductPrice { color: #3c3a3b; }
+#pjWrapper .pjFdAccourdionOuterHead a[aria-expanded="true"] { color: #3a3937; }
+#pjWrapper .pjFdAccourdionOuterHead a[aria-expanded="false"] { background: #7d8381; color: #fff; }
+
+/* ==========================================================================
+	#pjFdGroupVaucher
+========================================================================== */
+#pjWrapper .pjFdGroupVaucher .btn { border-width: 1px; }
+
+/* nav,
+footer {
+	background-color: #7d8381 !important;
+} */
+.pjFdContainer {
+	background-color: #8ee4af;
+}
+.left-box {
+	background-color: #fff;
+}
+.text-nav a{
+	color: #8ee4af !important;
+}
+li.active a:hover {
+	color: #8ee4af !important;
+}
+.text-list {
+	color: #8ee4af !important;
+}
+li .text-list:hover {
+	color: #8ee4af !important;
+} 
+li.active a {
+	color: #fff !important;
+	
+}
+.pjFdBtnOrder {
+    background-color: #1ec290;
+    color: #fff !important;
+}
+.text-list.pjFdBtnHome,
+.text-list.pjFdBtnLink {
+	color: #8ee4af !important;
+}

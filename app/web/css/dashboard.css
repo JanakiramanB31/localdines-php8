@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+.ibox-heading {
+    background-color: #EFFDFE !important;
+}
+.m-t-md {
+    margin-top: 5px !important;
+}
+.timeline-item em{
+	font-style: normal !important;
+	font-weight: bold;
+}
