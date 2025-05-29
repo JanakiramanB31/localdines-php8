@@ -641,14 +641,16 @@ class pjFrontPublic extends pjFront {
 		$hasImage = $this->_get->toString('hasImg');
     if ($category_id = $this->_get->toInt('category_id')) {
       $pjProductModel = pjProductModel::factory();
-      $arr = $pjProductModel
+     	$pjProductModel
 	      ->join('pjMultiLang', sprintf("t2.foreign_id = t1.id AND t2.model = 'pjProduct' AND t2.locale = '%u' AND t2.field = 'name'", $this->getLocaleId()), 'left')
 	      ->join('pjMultiLang', sprintf("t3.foreign_id = t1.id AND t3.model = 'pjProduct' AND t3.locale = '%u' AND t3.field = 'description'", $this->getLocaleId()), 'left')
 	      ->join('pjProductCategory', 't4.product_id=t1.id', 'left outer')
 	      ->select("t1.*, t2.content AS name, t3.content AS description, t4.category_id, (SELECT COUNT(TO.product_id) FROM `".pjReviewModel::factory()->getTable()."` AS `TO` WHERE `TO`.product_id=t1.id AND `TO`.status = 1) AS cnt_reviews")
-	      ->where('t4.category_id', $category_id)
-	      ->where('t1.order_type', 'takeaway')
-	      ->orderBy("t1.is_featured DESC, t2.content ASC")
+	      ->where('t4.category_id', $category_id);
+	       if (ORDER_TYPE) {
+          	$pjProductModel->where("t1.order_type = ",$orderType);
+       	  }
+      $arr = $pjProductModel ->orderBy("t1.is_featured DESC, t2.content ASC")
 	      ->findAll()
 	      ->getData();
     
