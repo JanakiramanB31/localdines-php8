@@ -51,12 +51,12 @@ $isScriptConfigsIndex = $isScriptConfigsController && in_array($action_name, arr
 // Permissions Master
 $hasAccessScriptConfigs = 1;
 
-// Postalcode Controller
-$isScriptPostalcodeController = in_array($controller_name, array('pjAdminPostalcode'));
-$isScriptPostalcodeIndex = $isScriptPostalcodeController && in_array($action_name, array('pjActionIndex', 'pjActionCreate', 'pjActionUpdate'));
+// Postcode Controller
+$isScriptPostcodeController = in_array($controller_name, array('pjAdminPostcode'));
+$isScriptPostcodeIndex = $isScriptPostcodeController && in_array($action_name, array('pjActionIndex', 'pjActionCreate', 'pjActionUpdate'));
 
-// Permissions Postalcode
-$hasAccessScriptPostalcode = 1;
+// Permissions Postcode
+$hasAccessScriptPostcode = 1;
 
 // Income Controller
 $isScriptIncomesController = in_array($controller_name, array('pjAdminIncomes'));
@@ -108,7 +108,7 @@ $isScriptOptionsController = in_array($controller_name, array('pjAdminOptions', 
 $isScriptOptionsController = in_array($controller_name, array('pjAdminOptions', 'pjAdminConfigs')) && !in_array($action_name, array('pjActionPreview', 'pjActionInstall'));
 
 // Settings
-$isScriptOptionsController = in_array($controller_name, array('pjAdminOptions', 'pjAdminPostalcode')) && !in_array($action_name, array('pjActionPreview', 'pjActionInstall'));
+$isScriptOptionsController = in_array($controller_name, array('pjAdminOptions', 'pjAdminPostcode')) && !in_array($action_name, array('pjActionPreview', 'pjActionInstall'));
 
 $isScriptOptionsBooking         = $isScriptOptionsController && in_array($action_name, array('pjActionOrders'));
 $isScriptOptionsBookingForm     = $isScriptOptionsController && in_array($action_name, array('pjActionClientDetails', 'pjActionOrderForm', 'pjActionDeliveryForm'));
@@ -357,8 +357,8 @@ $hasAccessScriptOptionsPrintOrder       = pjAuth::factory('pjAdminOptions', 'pjA
                     <?php echo "Configs";?>
                 </a></li>
             <?php endif; ?>
-            <?php if($hasAccessScriptPostalcode): ?>
-                <li <?php echo $isScriptPostalcodeController ? ' class="active"' : NULL; ?>><a href="<?php echo $_SERVER['PHP_SELF']; ?>?controller=pjAdminPostalcode&amp;action=pjActionIndex">
+            <?php if($hasAccessScriptPostcode): ?>
+                <li <?php echo $isScriptPostcodeController ? ' class="active"' : NULL; ?>><a href="<?php echo $_SERVER['PHP_SELF']; ?>?controller=pjAdminPostcode&amp;action=pjActionIndex">
                     <?php echo "Postcodes";?>
                 </a></li>
             <?php endif; ?> 

@@ -55,12 +55,12 @@ class pjFront extends pjAppController
     
     public function isFrontLogged()
     {
-        if (isset($_SESSION[$this->defaultClient]) && count($_SESSION[$this->defaultClient]) > 0)
+        if (isset($_SESSION[$this->defaultUser]) && count($_SESSION[$this->defaultUser]) > 0)
         {
             $user = pjAuth::init(array('id' => $this->getClientId()))->getUser();
             if($user['status'] == 'F')
             {
-                $this->session->unsetData($this->defaultClient);
+                $this->session->unsetData($this->defaultUser);
                 return false;
             }
             return true;

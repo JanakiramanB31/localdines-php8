@@ -719,12 +719,6 @@
 				}
 				
 				return false;
-			}).on("click.fd", ".fdBtnLogoutt", function (e) {
-				if (e && e.preventDefault) {
-					e.preventDefault();
-				}
-				alert("test");
-				return false;
 			}).on("click.fd change.fd", "input[name='type']", function (e) {
 				var $this = pjQ.$(this);
 				switch ($this.filter(":checked").val()) {
@@ -1251,10 +1245,12 @@
 				if (e && e.preventDefault) {
 					e.preventDefault();
 				}
-				//console.log("comes to preview");
+				// console.log("comes to preview", self.opts.index);
 				if(!pjQ.$(this).hasClass('fdButtonDisabled'))
 				{
+					console.log("comes to previewss", self.opts.index);
 					pjQ.$('#fdCheckoutForm_' + self.opts.index).trigger('submit');
+					
 				}
 				return false;
 			}).on("click.fd", ".fdButtonGetCheckout", function (e) {
@@ -1392,13 +1388,16 @@
 				pjQ.$('.fdLoader').css('display', 'block');
 				hashBang("#!/loadLogin");
 				return false;
-			}).on("click.fd", ".fdBtnLogout", function (e) {
-
+			}).on("click.fd", ".fdBtnLogoutClient", function (e) {
+				e.preventDefault();
+				console.log('came here for logout');
+					return;
 				if (e && e.preventDefault) {
 					e.preventDefault();
 				}
 				pjQ.$('.fdLoader').css('display', 'block');
 				pjQ.$.get([self.opts.folder, "index.php?controller=pjFrontEnd&action=pjActionLogout", "&session_id=", self.opts.session_id].join("")).done(function (data) {
+					
 					if (!hashBang("#!/loadMain")) 
 					{
 						self.loadMain.call(self);
@@ -1889,7 +1888,7 @@
 							}
 							self.getLocations.call(self);
 						};
-						pjQ.$.getScript("//maps.googleapis.com/maps/api/js?"+self.opts.googleAPIKey+"&libraries=drawing&callback=initializeFD");
+						// pjQ.$.getScript("//maps.googleapis.com/maps/api/js?"+self.opts.googleAPIKey+"&libraries=drawing&callback=initializeFD");
 					} else {
 						var id = pjQ.$("option:selected", pjQ.$('#fdMain_' + index).find("select[name='p_location_id']")).val();
 						if (typeof id != "undefined" && parseInt(id, 10) > 0) {
@@ -2317,6 +2316,7 @@
 			pjQ.$.get([self.opts.folder, "index.php?controller=pjFrontEnd&action=pjActionGetPickupLocations", "&session_id=", self.opts.session_id].join(""), {
 				"id": id
 			}).done(function (data) {
+				return;
 				pjQ.$("#fdTypeMap_" + self.opts.index).show();
 								
 				if (myPickupMarkers) {
@@ -2483,7 +2483,8 @@
 				latlng;
 			
 			pjQ.$.get([self.opts.folder, "index.php?controller=pjFrontEnd&action=pjActionGetLocations", "&session_id=", self.opts.session_id].join("")).done(function (data) {
-				pjQ.$("#fdDeliveryMap_" + self.opts.index).show();
+				// pjQ.$("#fdDeliveryMap_" + self.opts.index).show();
+				return;
 				if (data.length > 0) 
 				{
 					if(data.length == 1)
@@ -3365,71 +3366,71 @@
   
 	}
 	
-	function GoogleMaps(opts) {
-		console.log(document.getElementById(self.options.id));
-		this.map = null;
-		this.options = {
-			id: "map_canvas",
-			zoom: 8,
-			icon: null
-		};
-		this.init(opts);
-	}
-	GoogleMaps.prototype = {
-		init: function (opts) {
-			var self = this;
-			for (var x in opts) {
-				if (opts.hasOwnProperty(x)) {
-					self.options[x] = opts[x];
-				}
-			}
-			self.map = new google.maps.Map(document.getElementById(self.options.id), {
-				zoom: self.options.zoom,
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-			});
-			return self;
-		},
-		addMarker: function (marker, position) {
-			var self = this,
-				obj = {
-					map: self.map,
-					position: position,
-					clickable: false,
-					zIndex: 900
-				};
-			if (self.options.icon != null) {
-				obj.icon = self.options.icon;
-			}
-			marker.push(new google.maps.Marker(obj));
-			self.map.setCenter(position);
-			return self;
-		},
-		clearOverlays: function (overlays) {
-			if (overlays && overlays.length > 0) {
-				while (overlays[0]) {
-					overlays.pop().setMap(null);
-				}
-			}
-		},
-		setFocus: function (overlay) {
-			overlay.setOptions({
-				strokeColor: '#1B7BDC',
-				fillColor: '#4295E8'
-			});
-		},
-		removeFocus: function (overlays, exceptId) {
-			if (overlays && overlays.length > 0) {
-				for (var i = 0, len = overlays.length; i < len; i++) {
-					if (overlays[i].myObj.id != exceptId) {
-						overlays[i].setOptions({
-							strokeColor: '#008000',
-							fillColor: '#008000'
-						});
-					}
-				}
-			}
-		}
-	};
+	// function GoogleMaps(opts) {
+	// 	console.log(document.getElementById(self.options.id));
+	// 	this.map = null;
+	// 	this.options = {
+	// 		id: "map_canvas",
+	// 		zoom: 8,
+	// 		icon: null
+	// 	};
+	// 	this.init(opts);
+	// }
+	// GoogleMaps.prototype = {
+	// 	init: function (opts) {
+	// 		var self = this;
+	// 		for (var x in opts) {
+	// 			if (opts.hasOwnProperty(x)) {
+	// 				self.options[x] = opts[x];
+	// 			}
+	// 		}
+	// 		self.map = new google.maps.Map(document.getElementById(self.options.id), {
+	// 			zoom: self.options.zoom,
+	// 			mapTypeId: google.maps.MapTypeId.ROADMAP
+	// 		});
+	// 		return self;
+	// 	},
+	// 	addMarker: function (marker, position) {
+	// 		var self = this,
+	// 			obj = {
+	// 				map: self.map,
+	// 				position: position,
+	// 				clickable: false,
+	// 				zIndex: 900
+	// 			};
+	// 		if (self.options.icon != null) {
+	// 			obj.icon = self.options.icon;
+	// 		}
+	// 		marker.push(new google.maps.Marker(obj));
+	// 		self.map.setCenter(position);
+	// 		return self;
+	// 	},
+	// 	clearOverlays: function (overlays) {
+	// 		if (overlays && overlays.length > 0) {
+	// 			while (overlays[0]) {
+	// 				overlays.pop().setMap(null);
+	// 			}
+	// 		}
+	// 	},
+	// 	setFocus: function (overlay) {
+	// 		overlay.setOptions({
+	// 			strokeColor: '#1B7BDC',
+	// 			fillColor: '#4295E8'
+	// 		});
+	// 	},
+	// 	removeFocus: function (overlays, exceptId) {
+	// 		if (overlays && overlays.length > 0) {
+	// 			for (var i = 0, len = overlays.length; i < len; i++) {
+	// 				if (overlays[i].myObj.id != exceptId) {
+	// 					overlays[i].setOptions({
+	// 						strokeColor: '#008000',
+	// 						fillColor: '#008000'
+	// 					});
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// };
 	
 	window.FoodDelivery = FoodDelivery;	
 })(window);

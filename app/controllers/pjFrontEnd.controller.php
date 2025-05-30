@@ -203,6 +203,8 @@ class pjFrontEnd extends pjFront {
     $this->isAjax = true;
     if ($this->isXHR()) {
       if (self::isPost() && $this->_post->check('profile')) {
+        echo '<pre>'; print_r($_SESSION[$this->defaultClient]); echo '<pre>';
+        return;
         if ($this->isFrontLogged()) {
           $post = $this->_post->raw();
           $post['u_surname'] = $this->_post->toString('surname');
@@ -225,6 +227,7 @@ class pjFrontEnd extends pjFront {
     $this->setAjax(true);
     if ($this->isXHR()) {
       if ($this->isFrontLogged()) { 
+         unset($_SESSION[$this->defaultUser]);
       	if (isset($_SESSION['guest'])) {
 					// echo "comes inside guest";
       		unset($_SESSION['guest']);
@@ -234,6 +237,7 @@ class pjFrontEnd extends pjFront {
       		unset($_SESSION['guest_email']);
       		unset($_SESSION['guest_phone']);
 					unset($_SESSION['guest_otp_check']);
+          unset($_SESSION[$this->defaultUser]);
       	}
 				if (isset($_SESSION['social_login'])) {
         		unset($_SESSION['social_login']);

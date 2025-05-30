@@ -174,9 +174,8 @@ $jqDateFormat = pjUtil::jqDateFormat($tpl['option_arr']['o_date_format']);
 							<ul class="nav nav-pills" role="tablist">
 								<?php if(FRONT_END_PICKUP == 1) { ?>
 								<li role="presentation" class="fdTabOuter<?php echo $isPickup ? ' active' : NULL; ?>">
-									<a href="#" class="text-uppercase fdTypeTab fdTabPickup" aria-controls="pickup" role="tab">
+									<a href="#" class="text-uppercase fdTypeTab fdTabPickup" aria-controls="pickup" role="tab" style='color:white'>
 										<i class="fa fa-suitcase"></i>
-	
 										&nbsp;
 										<?php __('front_pickup');?>
 									</a>

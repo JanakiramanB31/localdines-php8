@@ -23,30 +23,34 @@
    */
 
   const select = (el, all = false) => {
+  el = el.trim();
+  
+  // List of special routes/paths that shouldn't be treated as CSS selectors
+  const routePatterns = [
+    '#!/loadTypes', 
+    '#!/loadMain', 
+    '#!/loadLogin', 
+    '#!/loadProfile',
+    '#!/loadMyOrders',
+    '#!/loadCheckout', 
+    '#!/loadMainQr', 
+    '#!/loadForgot',
+    '#!/loadReview', 
+    '#!/loadRating',
+  ];
 
-    el = el.trim()
-
-    if (all) {
-
-      return [...document.querySelectorAll(el)]
-
-    } else {
-
-      var selectorsException = ['#!/loadTypes', '#!/loadMain', '#!/loadLogin', '#!/loadProfile', '#!/loadCheckout', '#!/loadMainQr', '#!/loadForgot', '#!/loadReview', '#!/loadRating'];
-
-      if(jQuery.inArray(el, selectorsException) == 0) {
-        
-        return;
-
-      } else {
-
-        return document.querySelector(el)
-
-      }
-
-    }
-
+  // Check if this is one of our special routes
+  if (routePatterns.includes(el)) {
+    return null; // or return a specific value if needed
   }
+
+  // Normal CSS selector handling
+  if (all) {
+    return [...document.querySelectorAll(el)];
+  } else {
+    return document.querySelector(el);
+  }
+}
 
 
 
@@ -198,10 +202,10 @@
         }
 
       } else {
-        selectHeader.classList.remove('header-transparent')
-        selectTopbar.classList.remove('topbar-transparent')
-        selectTopbar.style.background = 'rgb(40 39 38)';
-        selectHeader.style.background = 'rgb(26, 24, 22)';
+        // selectHeader.classList.remove('header-transparent')
+        // selectTopbar.classList.remove('topbar-transparent')
+        // selectTopbar.style.background = 'rgb(40 39 38)';
+        // selectHeader.style.background = 'rgb(26, 24, 22)';
       }
 
     }
