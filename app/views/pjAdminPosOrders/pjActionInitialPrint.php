@@ -4,6 +4,11 @@
 <div id="receiptContainer">
 <div class="ticket" style="margin: 5px 7px;width: <?php echo $paperWidth;?>;">
   <div style="margin: auto; width: <?php echo $paperWidth;?>; text-align: center;">
+    <?php if (defined(RECEIPT_SHOW_LOGO) && RECEIPT_SHOW_LOGO) { ?>
+      <div style="text-align: center;">
+        <img src="<?php echo UPLOAD_URL  . 'receipt_logo.png'; ?>" alt="Logo" width="75" height="75"/>
+      </div>
+    <?php } ?>
     <span><strong><?php echo $tpl['location_arr'][0]['name'];?></strong></span><br/>
     <span style="text-align: center; font-size:15px"><?php echo $tpl['location_arr'][0]['address'];?></span><br/>
     <span style="font-size:15px">TEL : <?php echo WEB_CONTACT_NO; ?></span><br/>
