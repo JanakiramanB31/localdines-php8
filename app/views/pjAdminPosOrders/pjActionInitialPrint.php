@@ -4,7 +4,7 @@
 <div id="receiptContainer">
 <div class="ticket" style="margin: 5px 7px;width: <?php echo $paperWidth;?>;">
   <div style="margin: auto; width: <?php echo $paperWidth;?>; text-align: center;">
-    <?php if (defined(RECEIPT_SHOW_LOGO) && RECEIPT_SHOW_LOGO) { ?>
+    <?php if (defined('RECEIPT_SHOW_LOGO') && RECEIPT_SHOW_LOGO) { ?>
       <div style="text-align: center;">
         <img src="<?php echo UPLOAD_URL  . 'receipt_logo.png'; ?>" alt="Logo" width="75" height="75"/>
       </div>
