@@ -5,6 +5,7 @@ if (!defined("ROOT_PATH")) {
 }
 class pjAdminPosOrders extends pjAdmin {
   public function pjActionIndex() {
+    //  echo 'came here';
     $this->checkLogin();
     if (!pjAuth::factory()->hasAccess()) {
       $this->sendForbidden();
@@ -326,8 +327,18 @@ class pjAdminPosOrders extends pjAdmin {
         $err = 'AR04';
       }
       if (KITCHEN_PRINT) {
+        if ($data['type'] == 'delivery') {
+          $responseData = $this->pjActionNotifyDriver($id);
+        //   print_r($responseData);
+        //   exit;
+        }
         pjUtil::redirect(PJ_INSTALL_URL . "index.php?controller=pjAdminPosOrders&action=pjActionPrintOrder&source=index&origin=Tel&id=$id");
       } else {
+        if ($data['type'] == 'delivery') {
+          $responseData = $this->pjActionNotifyDriver($id);
+        //   print_r($responseData);
+        //   exit;
+        }
          pjUtil::redirect(PJ_INSTALL_URL . "index.php?controller=pjAdminPosOrders&action=pjActionIndex");
       }
       
@@ -336,6 +347,18 @@ class pjAdminPosOrders extends pjAdmin {
     $arr['table_name'] = 'Take Away';
     $this->set('arr', $arr);
     $this->set('order_title', 'Take Away');
+  }
+  
+  private function pjActionNotifyDriver($order_id) {
+    if ($order_id) {
+      $pjHttp = new pjHttp();
+      $delivery_notification_url = "https://ahaadosa.eposplus.uk/driver/public/api/v1/order/send-notification";
+      $pjHttp->curlRequest($delivery_notification_url.'?order_id='.$order_id, array(), 'GET', array('Content-Type: application/json'));
+      $verifyResponse = $pjHttp->getResponse();
+      $responseData = json_decode($verifyResponse);
+      return $responseData;
+    }
+    return false;
   }
 
   public function pjActionUpdate() {
@@ -1131,6 +1154,9 @@ class pjAdminPosOrders extends pjAdmin {
 
   // MEGAMIND
   public function pjActionCheckClientPhoneNumber() {
+    if (ob_get_length()) {
+        ob_clean();
+    }
     $this->setAjax(true);
     if ($this->isXHR()) {
       if (!self::isPost()) {

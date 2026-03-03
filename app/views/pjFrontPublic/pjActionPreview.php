@@ -114,13 +114,13 @@ $CLIENT = $controller->isFrontLogged() ? @$_SESSION[$controller->defaultClient] 
 							$p_dt = strtotime($STORAGE['next_day']);
 						}else{
 							// echo "<pre>"; print_r($STORAGE);echo "</pre>";
-						    if($STORAGE['p_time'] == 'asap')
+						    if($STORAGE['p_time'] != '' && $STORAGE['p_time'] == 'asap')
 						    {
 						        $p_dt = strtotime(pjDateTime::formatDate($STORAGE['p_date'], $tpl['option_arr']['o_date_format']));
 						    }else{
 									
 						        $p_dt = strtotime(pjDateTime::formatDate($STORAGE['p_date'], $tpl['option_arr']['o_date_format']));
-										//. ' ' . pjDateTime::formatTime($STORAGE['p_time'], $tpl['option_arr']['o_time_format']));
+										//. ' ' . pjDa$STORAGE['p_time']teTime::formatTime($STORAGE['p_time'], $tpl['option_arr']['o_time_format']));
 						    }
 						}
 						?>
@@ -154,11 +154,13 @@ $CLIENT = $controller->isFrontLogged() ? @$_SESSION[$controller->defaultClient] 
 						{
 							$d_dt = strtotime($STORAGE['next_day']);
 						}else{
-						    if($STORAGE['d_time'] == 'asap')
+						    if($STORAGE['d_time'] != '' && $STORAGE['d_time'] == 'asap')
 						    {
 						        $d_dt = strtotime(pjDateTime::formatDate($STORAGE['d_date'], $tpl['option_arr']['o_date_format']));
 						    }else{
-						        $d_dt = strtotime(pjDateTime::formatDate($STORAGE['d_date'], $tpl['option_arr']['o_date_format']) . ' ' . pjDateTime::formatTime($STORAGE['d_time'], $tpl['option_arr']['o_time_format']));
+						        $STORAGE['d_time'] == 'asap';
+						         $d_dt = strtotime(pjDateTime::formatDate($STORAGE['d_date'], $tpl['option_arr']['o_date_format']));
+						      //  $d_dt = strtotime(pjDateTime::formatDate($STORAGE['d_date'], $tpl['option_arr']['o_date_format']) . ' ' . pjDateTime::formatTime($STORAGE['d_time'], $tpl['option_arr']['o_time_format']));
 						    }
 						}
 						?>

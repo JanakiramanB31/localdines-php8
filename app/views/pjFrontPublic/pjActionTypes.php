@@ -499,6 +499,7 @@ $jqDateFormat = pjUtil::jqDateFormat($tpl['option_arr']['o_date_format']);
 												
 											</div>
 											<div id="postCodeErr" style="display:none; color: #a94442; margin-top; 10px;"></div>
+											<div id="postCodeSuccess" style="display:none; color: #0a5114; margin-top; 10px;">Postcode is valid</div>
 								        </div>
 								    </div>
 									<!-- <div class="form-group">
@@ -522,14 +523,14 @@ $jqDateFormat = pjUtil::jqDateFormat($tpl['option_arr']['o_date_format']);
 										</div>
 									</div> -->
 									<!-- /.form-group -->
-									<div class="form-group <?php echo htmlspecialchars(stripslashes(@$CLIENT['c_postcode'])) == '' ? 'd-block' : 'd-none' ; ?>">
+									<!-- <div class="form-group <?php echo htmlspecialchars(stripslashes(@$CLIENT['c_postcode'])) == '' ? 'd-block' : 'd-none' ; ?>">
 									    <label for="" class="col-sm-4 control-label" style="margin-bottom:18px;">Address List</label>
 										<div class="col-sm-8">
 											<div id='addressList'> 
 												
 											</div>
 								        </div>
-								    </div>
+								    </div> -->
 									<?php
 								}
 								if (in_array($tpl['option_arr']['o_df_include_address_1'], array(2, 3)))
@@ -747,111 +748,242 @@ $jqDateFormat = pjUtil::jqDateFormat($tpl['option_arr']['o_date_format']);
 		$("#d_address_2").val('');
 		$("#d_city").val('');
 	});
-	function getAddresses($this) { 
-      var Client = IdealPostcodes.Client;
-      var lookupPostcode = IdealPostcodes.lookupPostcode;
-      //var client = new Client({ api_key: "iddqd" });
-      var client = new Client({ api_key:  IDEAL_API_KEY});
-      console.log('Api', IDEAL_API_KEY);
-      postcode = $this.val();
-      if (postcode) {
-        var addressList = $(
-          '<select id="selAddress" name="selectAddress" class="form-control"/>'
-        );
-        $("<option />", { value: 0, text: "--Choose--"}).appendTo(addressList);
-       
-        lookupPostcode({ postcode, client }).then(function (result) {
-          //console.log(result[0].postcode_outward);
-          postalResult = result;
-          if (result.length > 0) {
-            var $pc_outward = result[0].postcode_outward;
-            var $pc_valid;
-            var i = 1;
-            if ($("#post_code").hasClass("has-error")) {
-              $("#post_code").removeClass("has-error");
-              $("#postCodeErr").css("display","none");
-            }
-            if ($pc_outward) {
-			
-              $.ajax({
-                type: "POST",
-                async: false,
-                url: $controller_url+"index.php?controller=pjFrontEnd&action=pjActionCheckPostcode",
-                data: {post_code: $pc_outward},
-                success: function (data) {
-                  if (data.code == 100) {
-                    $pc_valid = false;
-                  } else {
-                    $pc_valid = true;
-                  }
+
+	function getAddresses($this) {
+    postcode = $this.val().trim().toUpperCase();
+    
+    if (postcode != '') {
+        // var addressList = $(
+        //     '<select id="selAddress" name="selectAddress" class="form-control"/>'
+        // );
+        // $("<option />", { value: 0, text: "--Choose--" }).appendTo(addressList);
+        
+        // Use Postcodes.io to validate postcode
+        $.ajax({
+            url: `https://api.postcodes.io/postcodes/${encodeURIComponent(postcode)}`,
+            method: 'GET',
+            success: function(data) {
+                if (data.status == 200 && data.result) {
+					console.log(data);
+                    var result = data.result;
+                    var $pc_outward = result.outcode; // Equivalent to postcode_outward
+                    var $pc_valid;
+                    var i = 1;
+                    
+                    if ($("#post_code").hasClass("has-error")) {
+                        $("#post_code").removeClass("has-error");
+                        $("#postCodeErr").css("display", "none");
+						$("#inputPostCode").attr('data-wt', '');
+                    }
+
+					if ($("#post_code").hasClass("has-success")) {
+                        $("#post_code").removeClass("has-success");
+                        $("#postCodeSuccess").css("display", "none");
+						$("#inputPostCode").attr('data-wt', '');
+                    }
+                    
+                    if ($pc_outward) {
+                        if ($(".onoffswitch-overridePc .onoffswitch-checkbox").prop("checked")) {
+                            $pc_valid = true;
+                        } else {
+                            $.ajax({
+                                type: "POST",
+                                async: false,
+                                url: "index.php?controller=pjAdminPosOrders&action=pjActionCheckPostcode",
+                                data: { post_code: $pc_outward },
+                                success: function (response) {
+                                    if (response.code == 100) {
+                                        $pc_valid = false;
+                                    } else {
+                                        $pc_valid = true;
+                                    }
+                                }
+                            });
+                        }
+                    }
+                    
+                    if ($pc_valid) {
+                        $("#inputPostCode").attr('data-validated', 1);
+                        $("#inputPostCode").attr('data-wt', 'valid');
+						$("#inputPostCode").parent().addClass("has-success");
+                        $("#postCodeSuccess").css("display", "block");
+						
+                        
+                        // Create address string from Postcodes.io data
+                        // var address = "";
+                        
+                        // // Build address from available fields
+                        // var addressParts = [];
+                        // if (result.building_name) addressParts.push(result.building_name);
+                        // if (result.thoroughfare) addressParts.push(result.thoroughfare); // Street name
+                        // if (result.dependent_thoroughfare) addressParts.push(result.dependent_thoroughfare);
+                        // if (result.double_dependent_locality) addressParts.push(result.double_dependent_locality);
+                        // if (result.dependent_locality) addressParts.push(result.dependent_locality);
+                        // if (result.post_town) addressParts.push(result.post_town);
+                        
+                        // address = addressParts.join(", ");
+                        
+                        // // If no specific address parts, use a generic one
+                        // if (addressParts.length === 0) {
+                        //     address = postcode + " area";
+                        // }
+                        
+                        // $("<option />", { 
+                        //     value: 1, 
+                        //     text: address 
+                        // }).appendTo(addressList);
+                        
+                        // $("#addressList").html(addressList);
+                        
+                        // // Auto-fill address fields since there's only one result
+                        // $("#d_address_1").val(result.building_name || result.thoroughfare || "");
+                        // $("#d_address_2").val(result.dependent_thoroughfare || result.dependent_locality || "");
+                        // $("#d_city").val(result.post_town || "");
+                    } else {
+                        $("#inputPostCode").parent().addClass("has-error");
+                        $("#inputPostCode").attr('data-wt', 'invalid');
+                        $("#postCodeErr").text("Post code is not available for delivery");
+                        $("#postCodeErr").css("display", "block");
+                        $("#d_address_1").val('');
+                        $("#d_address_2").val('');
+                        $("#d_city").val('');
+                    }
+                } else {
+                    // Invalid postcode
+                    $("#post_code").addClass("has-error");
+                    $("#postCodeErr").css("display", "block");
+                    $("#postCodeErr").text("Invalid Postcode");
+                    $("#d_address_1").val('');
+                    $("#d_address_2").val('');
+                    $("#d_city").val('');
+                    $("#inputPostCode").attr('data-wt', 'invalid');
                 }
-              });
+            },
+            error: function(xhr, status, error) {
+                // Handle API errors
+                $("#post_code").addClass("has-error");
+                $("#postCodeErr").css("display", "block");
+                if (xhr.status === 404) {
+                    $("#postCodeErr").text("Invalid Postcode");
+                } else {
+                    $("#postCodeErr").text("Error validating postcode");
+                }
+                $("#d_address_1").val('');
+                $("#d_address_2").val('');
+                $("#d_city").val('');
+                $("#inputPostCode").attr('data-wt', 'invalid');
             }
-            // console.log($pc_valid);
-            if ($pc_valid) {
-			    $("#inputPostCode").attr("data-validated", "1");
-				$("#btnEditPostCode").parent().addClass("input-group-btn");
-				$("#btnEditPostCode").parent().removeClass("d-none");
-				$("#btnFindPostCode").parent().removeClass("input-group-btn");
-				$("#btnFindPostCode").parent().addClass("d-none");
-				$("#inputPostCode").attr("data-validated", 1);
-				$("#inputPostCode").prop("readonly", true);
-				$.each(result, function (index) {
-				var address =
-					result[index].line_1 +
-					", " +
-					result[index].line_2 +
-					", " +
-					result[index].line_3;
+        });
+    } else {
+        $("#postCodeErr").css("display", "none");
+        $("#inputPostCode").attr('data-wt', 'invalid');
+    }
+}
+	// function getAddresses($this) { 
+    //   var Client = IdealPostcodes.Client;
+    //   var lookupPostcode = IdealPostcodes.lookupPostcode;
+    //   //var client = new Client({ api_key: "iddqd" });
+    //   var client = new Client({ api_key:  IDEAL_API_KEY});
+    //   console.log('Api', IDEAL_API_KEY);
+    //   postcode = $this.val();
+    //   if (postcode) {
+    //     var addressList = $(
+    //       '<select id="selAddress" name="selectAddress" class="form-control"/>'
+    //     );
+    //     $("<option />", { value: 0, text: "--Choose--"}).appendTo(addressList);
+       
+    //     lookupPostcode({ postcode, client }).then(function (result) {
+    //       //console.log(result[0].postcode_outward);
+    //       postalResult = result;
+    //       if (result.length > 0) {
+    //         var $pc_outward = result[0].postcode_outward;
+    //         var $pc_valid;
+    //         var i = 1;
+    //         if ($("#post_code").hasClass("has-error")) {
+    //           $("#post_code").removeClass("has-error");
+    //           $("#postCodeErr").css("display","none");
+    //         }
+    //         if ($pc_outward) {
+			
+    //           $.ajax({
+    //             type: "POST",
+    //             async: false,
+    //             url: $controller_url+"index.php?controller=pjFrontEnd&action=pjActionCheckPostcode",
+    //             data: {post_code: $pc_outward},
+    //             success: function (data) {
+    //               if (data.code == 100) {
+    //                 $pc_valid = false;
+    //               } else {
+    //                 $pc_valid = true;
+    //               }
+    //             }
+    //           });
+    //         }
+    //         // console.log($pc_valid);
+    //         if ($pc_valid) {
+	// 		    $("#inputPostCode").attr("data-validated", "1");
+	// 			$("#btnEditPostCode").parent().addClass("input-group-btn");
+	// 			$("#btnEditPostCode").parent().removeClass("d-none");
+	// 			$("#btnFindPostCode").parent().removeClass("input-group-btn");
+	// 			$("#btnFindPostCode").parent().addClass("d-none");
+	// 			$("#inputPostCode").attr("data-validated", 1);
+	// 			$("#inputPostCode").prop("readonly", true);
+	// 			$.each(result, function (index) {
+	// 			var address =
+	// 				result[index].line_1 +
+	// 				", " +
+	// 				result[index].line_2 +
+	// 				", " +
+	// 				result[index].line_3;
 				
-				$("<option />", { value: i, text: address }).appendTo(
-					addressList
-				);
-				i = i + 1;
-				});
-				$("#addressList").parents(".form-group").removeClass("d-none");
-				$("#addressList").html(addressList);
-            } else {
-				$("#inputPostCode").attr("data-validated", "0");
-				$("#inputPostCode").parent().addClass("has-error");
-				$("#postCodeErr").text("Post code is not available for delivery");
-				$("#postCodeErr").css("display","block");
-				$("#d_address_1").val('');
-				$("#d_address_2").val('');
-				$("#d_city").val('');
-            }
+	// 			$("<option />", { value: i, text: address }).appendTo(
+	// 				addressList
+	// 			);
+	// 			i = i + 1;
+	// 			});
+	// 			$("#addressList").parents(".form-group").removeClass("d-none");
+	// 			$("#addressList").html(addressList);
+    //         } else {
+	// 			$("#inputPostCode").attr("data-validated", "0");
+	// 			$("#inputPostCode").parent().addClass("has-error");
+	// 			$("#postCodeErr").text("Post code is not available for delivery");
+	// 			$("#postCodeErr").css("display","block");
+	// 			$("#d_address_1").val('');
+	// 			$("#d_address_2").val('');
+	// 			$("#d_city").val('');
+    //         }
 
             
-           }  
-          if (result.length == 0) {
-            $("#post_code").addClass("has-error");
-			$("#postCodeErr").text("Invalid Postcode");
-            $("#postCodeErr").css("display","block");
-            $("#d_address_1").val('');
-            $("#d_address_2").val('');
-            $("#d_city").val('');
-          }
-          if (result.length >= 1) {
-            $("#selAddress").change(function(){
-            var index = $(this).val();
-            index = index - 1;
-            //console.log('Index', index);
-            if (index >= 0) {
+    //        }  
+    //       if (result.length == 0) {
+    //         $("#post_code").addClass("has-error");
+	// 		$("#postCodeErr").text("Invalid Postcode");
+    //         $("#postCodeErr").css("display","block");
+    //         $("#d_address_1").val('');
+    //         $("#d_address_2").val('');
+    //         $("#d_city").val('');
+    //       }
+    //       if (result.length >= 1) {
+    //         $("#selAddress").change(function(){
+    //         var index = $(this).val();
+    //         index = index - 1;
+    //         //console.log('Index', index);
+    //         if (index >= 0) {
 				
-              $("#d_address_1").val(result[index].line_1);
-              $("#d_address_2").val(result[index].line_2);
-              $("#d_city").val(result[index].post_town);
-            } else {
-              $("#d_address_1").val('');
-              $("#d_address_2").val('');
-              $("#d_city").val('');
-            }
-          })
-         } 
-        });
-      }
+    //           $("#d_address_1").val(result[index].line_1);
+    //           $("#d_address_2").val(result[index].line_2);
+    //           $("#d_city").val(result[index].post_town);
+    //         } else {
+    //           $("#d_address_1").val('');
+    //           $("#d_address_2").val('');
+    //           $("#d_city").val('');
+    //         }
+    //       })
+    //      } 
+    //     });
+    //   }
 
-    }
+    // }
 	// console.log("today");
 	$(function() {
 		var $today = today();
